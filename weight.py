@@ -105,7 +105,7 @@ class Weight:
                     time.sleep(2)
                     usage_response = urequests.get(usage_url)
                     time.sleep(2)
-                    #notify_response = urequests.post(url+"/notify", headers = {'content-type': 'application/json'}, data = notification_body)
+                    notify_response = urequests.post(url+"/notify", headers = {'content-type': 'application/json'}, data = notification_body)
                     time.sleep(2)
                     print("Weight: ", weight_response.status_code)
                     print("Usage: ", usage_response.status_code)
@@ -116,7 +116,7 @@ class Weight:
                 
                 weight_response.close()
                 usage_response.close()
-                #notify_response.close()
+                notify_response.close()
                 self.duration = 0
             
             gc.collect()
